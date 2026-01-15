@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono,League_Spartan,Sofia_Sans_Semi_Condensed } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +10,18 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+const leagueSpartano = League_Spartan({
+    variable: "--font-league-spartan",
+    subsets: ["latin"],
+    weight:['400','700','900']
+
+});
+const sofiaSansSemiCondensed = Sofia_Sans_Semi_Condensed({
+    variable: "--font-sofia-Sans-Semi-Condensed",
+    subsets: ["latin"],
+    weight:['400','700','900']
+
 });
 
 export const metadata: Metadata = {
@@ -25,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${leagueSpartano.variable} ${sofiaSansSemiCondensed.variable} antialiased`}
       >
         {children}
       </body>
