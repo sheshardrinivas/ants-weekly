@@ -144,7 +144,7 @@ export default function Home() {
           </div>
 
           <div className="overflow-x-auto w-full rounded-lg shadow-2xl">
-            <table className="w-full border-separate border-spacing-0 bg-[#00293D]/30 backdrop-blur-xl border border-[#5F7890]/20">
+            <table className="w-full   border-spacing-0 bg-transparent backdrop-blur-xl border border-[#5F7890]/10 ">
               <thead className="bg-[#5F7890]/20">
                 <tr>
                   <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-widest text-[#97ACC7]">
@@ -156,7 +156,7 @@ export default function Home() {
                 </tr>
               </thead>
 
-              <tbody className="divide-y divide-[#5F7890]/10">
+              <tbody className="divide-y divide-[#5F7890]/10 ">
                 {[
                   ["Shivansh Patel", "Founder / Editor"],
                   ["Amol Desai", "Co-founder / Editor / Designer"],
@@ -169,7 +169,7 @@ export default function Home() {
                 ].map(([name, role], i) => (
                   <tr
                     key={i}
-                    className="transition-colors duration-300 hover:bg-[#97ACC7]/5"
+                    className="transition-colors duration-300 hover:bg-[#97ACC7]/8"
                   >
                     <td className="px-6 py-4 text-[#97ACC7] font-medium whitespace-nowrap">
                       {name}
