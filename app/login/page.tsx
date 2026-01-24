@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+import {supabase} from "@/app/lib/supabase";
 
 export default function Home() {
   const router = useRouter();
@@ -18,9 +19,20 @@ export default function Home() {
         password: password.current?.value ?? "",
       }),
     });
-    const data = await response.json();
-    if (data?.auth) {
-      router.push("/user/dashboard");
+    const auth = await response.json();
+    if (auth?.auth) {
+        const { data, error } = await supabase
+            .from("roles")
+            .select("role")
+            .eq("name", name.current?.value)
+            .single();
+        if(data?.role){
+            console.log(data?.role);
+            router.push("/admin/dashboard");
+        }
+    }
+    else{
+       alert("Login failed. Please check your credentials.");
     }
   }
 

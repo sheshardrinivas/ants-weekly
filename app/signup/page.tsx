@@ -16,12 +16,12 @@ export default function SignupPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
       });
-
-      if (response.ok) {
+        const responseData = await response.json();
+      if (responseData.auth) {
         alert("Signup successful!");
         router.push("/login");
       } else {
-        alert("Signup failed");
+          alert(responseData?.message);
       }
     } catch (error) {
       console.error(error);
