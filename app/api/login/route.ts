@@ -17,7 +17,6 @@ export async function POST(request: Request) {
     if (error || !data) {
       return NextResponse.json({ auth: false }, { status: 401 });
     }
-
     const isValid = await argon2.verify(data.password, password);
     const isAdmin = await supabase
       .from("roles")
