@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 
 export async function POST(request: Request) {
   try {
+    //inputs;
     const { username, password } = await request.json();
 
     const { data, error } = await supabase
