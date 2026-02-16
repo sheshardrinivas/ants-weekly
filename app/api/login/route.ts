@@ -6,6 +6,7 @@ import { cookies } from "next/headers";
 export async function POST(request: Request) {
   try {
     const { username, password } = await request.json();
+
     const { data, error } = await supabase
       .from("user_auth")
       .select("password")
